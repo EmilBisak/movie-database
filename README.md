@@ -1,4 +1,4 @@
-Movie Datebase app
+# Movie Datebase app
 
 Tech Stack
 
@@ -11,10 +11,10 @@ Prerequisites
 
 Getting Started Just clone the repo and start hacking:
 
-$ git clone https://github.com/EmilBisak/movie-database.git
+-$ git clone https://github.com/EmilBisak/movie-database.git
 
-$ cd movie-database
+-$ cd movie-database
 
-$ npm install # Install project dependencies listed in package.json
+-$ npm install # Install project dependencies listed in package.json
 
-$ npm start # Compiles the app and opens it in a browser with "live reload"
+-$ npm start # Compiles the app and opens it in a browser with "live reload"
