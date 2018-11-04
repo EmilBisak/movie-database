@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+}
+nav a {
+    border: 1px solid #434343;
+    padding: 5px 10px;
+}
+nav a:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+header a, header a:visited, header a:hover, header a:active, header a:focus {
+    text-decoration: none;
+    color: #fff;
+}

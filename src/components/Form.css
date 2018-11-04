@@ -1,0 +1,48 @@
+form {
+    padding: 20px;
+}
+form label {
+    display: block;
+}
+
+form input {
+    padding: 5px;
+}
+form input[type="text"] {
+    margin-bottom: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid gray
+}
+
+form input[type="text"]:last-child {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    background-color: #3fcf6b;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #71ff9d;
+}
+
+.imagePlaceholder {
+    height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid gray;
+    margin-bottom: 10px;
+}
+.imagePlaceholder img {
+    max-height: 300px;
+}

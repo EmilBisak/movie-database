@@ -1,0 +1,206 @@
+[
+    {
+        "_id": "5a04a39cb894ff3f4238c817",
+        "naziv": "Rocky",
+        "godina": "1976",
+        "slika": "http://www.panicposters.com/media/catalog/product/cache/1/image/f63dc5ec28f3175f8a7f615bd217eb71/p/p/pp33296-rocky-poster.jpg"
+    },
+    {
+        "_id": "5a0058f1b894ff3f4278a00e",
+        "naziv": "Alien ",
+        "godina": "1979",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY268_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a85bf722af929789544b169",
+        "naziv": "rocky",
+        "godina": "1979",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/b/bc/Rocky_ii_poster.jpg"
+    },
+    {
+        "_id": "5a00468fb894ff3f42770d92",
+        "naziv": "The Shining",
+        "godina": "1980",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a1c4036b894ff3f424d64b1",
+        "naziv": "Blade Runner ",
+        "godina": "1982",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a04c532b894ff3f423afd16",
+        "naziv": "Povratak u buducnost",
+        "godina": "1985",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg"
+    },
+    {
+        "_id": "5a0d7867b894ff3f429909fd",
+        "naziv": "Povratak u buducnost II",
+        "godina": "1989",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/c/c2/Back_to_the_Future_Part_II.jpg"
+    },
+    {
+        "_id": "5a04a330b894ff3f4238c383",
+        "naziv": "Quick Change",
+        "godina": "1990",
+        "slika": "http://awesomebmovies.com/wp-content/uploads/2011/08/quick-change-poster.jpg"
+    },
+    {
+        "_id": "5a0d7ad0b894ff3f429945a5",
+        "naziv": "Povratak u buducnost III",
+        "godina": "1990",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/4/4e/Back_to_the_Future_Part_III.jpg"
+    },
+    {
+        "_id": "5a098499b894ff3f42649349",
+        "naziv": "JFK",
+        "godina": "1991",
+        "slika": "https://ringostrack.com/bundles/soundtrackindex/img/cover/26435_jfk.jpg"
+    },
+    {
+        "_id": "5a0994feb894ff3f42652c85",
+        "naziv": "Night on Earth",
+        "godina": "1991",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BYzAyM2I3ZmYtNmNkZC00MGZmLWIyNGYtYzU2ZWFlMGRiNGJlXkEyXkFqcGdeQXVyNjMxODMyODU@._V1_UY268_CR4,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a004cabb894ff3f42778536",
+        "naziv": "Groundhog Day",
+        "godina": "1993",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BZWIxNzM5YzQtY2FmMS00Yjc3LWI1ZjUtNGVjMjMzZTIxZTIxXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a04c6a6b894ff3f423b139a",
+        "naziv": "Hrabro Srce",
+        "godina": "1995",
+        "slika": "https://www.movieposter.com/posters/archive/main/64/MPW-32215"
+    },
+    {
+        "_id": "5a383ef7b894ff3f42f18ede",
+        "naziv": "Apollo",
+        "godina": "1995",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BNjEzYjJmNzgtNDkwNy00MTQ4LTlmMWMtNzA4YjE2NjI0ZDg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,673,1000_AL_.jpg"
+    },
+    {
+        "_id": "5a099664b894ff3f42653a51",
+        "naziv": "Fallen Angels",
+        "godina": "1995",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3NzI0MzQ3M15BMl5BanBnXkFtZTcwMzA0MDMzNA@@._V1_UY268_CR3,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a381a81b894ff3f42ee1e40",
+        "naziv": "Life Is Beautiful",
+        "godina": "1997",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_SX670_AL_.jpg"
+    },
+    {
+        "_id": "5a35b09fb894ff3f42ca5f51",
+        "naziv": "Fight Club ",
+        "godina": "1999",
+        "slika": "https://m.media-amazon.com/images/M/MV5BMjJmYTNkNmItYjYyZC00MGUxLWJhNWMtZDY4Nzc1MDAwMzU5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+    },
+    {
+        "_id": "5a00473eb894ff3f42771a39",
+        "naziv": "Gladijator",
+        "godina": "2000.",
+        "slika": "http://t3.gstatic.com/images?q=tbn:ANd9GcRuhegCaGHfcQc-Owpib9vGSO0hUlSUMTojO2s4ih8oXqHBw2ks"
+    },
+    {
+        "_id": "5a043888b894ff3f4230fceb",
+        "naziv": "The Patriot",
+        "godina": "2000.",
+        "slika": "http://www.gstatic.com/tv/thumb/movieposters/25745/p25745_p_v8_af.jpg"
+    },
+    {
+        "_id": "5a808b3c2af9297895bd0672",
+        "naziv": "ali",
+        "godina": "2001",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/3/3d/Ali_movie_poster.jpg",
+        "comments": [
+            {
+                "user": "dragan",
+                "comment": "Work"
+            }
+        ]
+    },
+    {
+        "_id": "5a35b1b7b894ff3f42ca7100",
+        "naziv": "Blow",
+        "godina": "2001",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5ODQwNzIxNV5BMl5BanBnXkFtZTYwNzAyMDE3._V1_.jpg"
+    },
+    {
+        "_id": "5a35bd93b894ff3f42cb2cd7",
+        "naziv": "Matrix 2",
+        "godina": "2003",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BYzM3OGVkMjMtNDk3NS00NDk5LWJjZjUtYTVkZTIyNmQxNDMxXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,684,1000_AL_.jpg"
+    },
+    {
+        "_id": "5a3585ecb894ff3f42c7dbc5",
+        "naziv": "Matrix 3",
+        "godina": "2003",
+        "slika": "http://t2.gstatic.com/images?q=tbn:ANd9GcSnqPZ_Ay9mOmXRylUQqzfahOLH_w7A19Qvhph82oeAL1nws_xL"
+    },
+    {
+        "_id": "5a099407b894ff3f426523b5",
+        "naziv": "2046",
+        "godina": "2004",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzY1MjkzNDY4MF5BMl5BanBnXkFtZTcwMzE1NzAzMQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a3806a8b894ff3f42ec9566",
+        "naziv": "V for Vendetta",
+        "godina": "2005",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BYzllMjJkODAtYjMwMi00YmNhLWFhYzAtZjZjODg5YzEwOGUwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY999_CR0,0,679,999_AL_.jpg"
+    },
+    {
+        "_id": "5a0055f2b894ff3f42783edd",
+        "naziv": "batman begins",
+        "godina": "2005.",
+        "slika": "http://www.gstatic.com/tv/thumb/movieposters/35903/p35903_p_v8_ay.jpg"
+    },
+    {
+        "_id": "5a004a22b894ff3f42775315",
+        "naziv": "Ostrov",
+        "godina": "2006",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk1MzA0NjEyMF5BMl5BanBnXkFtZTgwNDAwMDY0MDE@._V1_UY268_CR4,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a384165b894ff3f42f1bc70",
+        "naziv": "the pursuit of happyness",
+        "godina": "2006",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_SY1000_CR0,0,672,1000_AL_.jpg"
+    },
+    {
+        "_id": "5a00b79eb894ff3f42806360",
+        "naziv": "No Country for Old Men",
+        "godina": "2007",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5Njk3MjM4OV5BMl5BanBnXkFtZTcwMTc5MTE1MQ@@._V1_UY268_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a004b64b894ff3f42776996",
+        "naziv": "Sibir. Monamur",
+        "godina": "2011",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM3NjQ1NDc0N15BMl5BanBnXkFtZTcwMjA4NzQ0Nw@@._V1_UY268_CR9,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a0047d3b894ff3f42772a4c",
+        "naziv": "The Book Thief",
+        "godina": "2013",
+        "slika": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTE3NzkyMjAyNF5BMl5BanBnXkFtZTgwMDc5MTE0MDE@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    },
+    {
+        "_id": "5a35c960b894ff3f42cbdcf6",
+        "naziv": "Deadpool",
+        "godina": "2016",
+        "slika": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/Deadpool_%282016_poster%29.png/220px-Deadpool_%282016_poster%29.png"
+    },
+    {
+        "_id": "59fc6c4fb894ff3f422dd1f7",
+        "naziv": "Blade Runner 2049",
+        "godina": "2017",
+        "slika": "https://pbs.twimg.com/media/DH9QvgAUQAAZANa.jpg:large"
+    }
+]

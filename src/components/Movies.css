@@ -1,0 +1,77 @@
+.movieImg {
+    max-height: 260px;
+}
+
+.movieBox {
+    border: 3px solid #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+.movieBox:hover {
+    border: 3px solid #ccc;
+}
+
+
+.moviesHolder h3{
+    padding: 20px 0;
+}
+.moviesHolder .tooLong {
+    padding-bottom: 0;
+}
+.moviesHolder img{
+    margin: 0 auto;
+}
+
+.sortMovies input[type="text"] {
+    width: 50%;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+#sortMoviesBtn {
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: #fff;
+    padding: 3px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+#sortMoviesBtn:hover {
+    background-color: #3d4450;
+}
+#sortMoviesBtn:focus {
+    outline: none;
+}
+.sortMovies ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sortMovies ul li {
+    list-style: none;
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: #fff;
+    padding: 3px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.sortMovies ul li:hover {
+    background-color: #3d4450;
+}
+
+.sortMovies ul li:last-of-type {
+    margin-right: 0;
+}
+
+.sortMovies ul li span{
+    font-size: 16px;
+}
+
