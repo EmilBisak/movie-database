@@ -31,9 +31,11 @@ export default class Movie extends Component {
             <div>
                 {/* <div className="col-8 offset-2 col-sm-10 offset-sm-1"> */}
                 <h3 className={this.titleLengthStyleFixer()}>{naziv}</h3>
+                <div className="image-holder">
+                <span onClick={this.deleteMovie} className="delete-btn">X</span>
                 <img src={slika} alt={naziv} className="movieImg" />
+                </div>
                 <p>{godina}</p>
-                <button onClick={this.deleteMovie}>Delete</button>
                 {/* </div> */}
             </div>
         )

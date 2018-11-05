@@ -14,8 +14,8 @@ export default class Header extends Component {
     return (
       <header className="App-header">
         <nav>
-          <Link to="/" style={linkStyle}>Home</Link>{"  "}
-          <Link to="/addMovie" style={linkStyle}>Add Movie</Link>
+          <Link to="/" style={linkStyle}>Početna</Link>{"  "}
+          <Link to="/addMovie" style={linkStyle}>Dodaj film</Link>
         </nav>
         <div><Link to="/"><img className="App-logo" src={logo} alt="logo" /> <h1>Baza filmova</h1></Link></div>
 

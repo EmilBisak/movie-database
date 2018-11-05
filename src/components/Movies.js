@@ -9,6 +9,7 @@ class Movies extends Component {
 
     state = {
         filmovi: [],
+        filtered: [],
         isLoaded: false,
         sortMoviesVisible: false
     }
@@ -18,6 +19,7 @@ class Movies extends Component {
             .then(res => res.json())
             .then(json => this.setState({
                 filmovi: json,
+                filtered: json,
                 isLoaded: true
             }));
     }
@@ -39,7 +41,7 @@ class Movies extends Component {
             }
             return 0;
         })
-        this.setState({ filmovi: arr })
+        this.setState({ filtered: arr })
     }
 
     sortByAtoZADec = () => {
@@ -55,27 +57,36 @@ class Movies extends Component {
             }
             return 0;
         })
-        this.setState({ filmovi: arr })
+        this.setState({ filtered: arr })
     }
 
     sortByYearFromNewest = () => {
         let arr = this.state.filmovi.sort((a, b) => {
             return b.godina - a.godina
         })
-        this.setState({ filmovi: arr })
+        this.setState({ filtered: arr })
     }
 
     sortByYearFromOldest = () => {
         let arr = this.state.filmovi.sort((a, b) => {
             return a.godina - b.godina
         })
-        this.setState({ filmovi : arr })
+        this.setState({ filtered: arr })
     }
 
+    searchMovies = event => {
+        let movieName = event.target.value;
+        console.log(movieName);
+        let filtered = this.state.filmovi.filter(movie => {
+            return movie.naziv.toLowerCase().indexOf(movieName.toLowerCase()) > -1
+        })
 
+        this.setState({ filtered })
+
+    }
 
     render() {
-        const filmoviJSX = this.state.filmovi.map(film => {
+        const filmoviJSX = this.state.filtered.map(film => {
             const { naziv, godina, slika, _id } = film
             return (
                 <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={_id}>
@@ -93,17 +104,16 @@ class Movies extends Component {
 
         return (
             <div>
+                <input type="text" placeholder="Pretraži filmove" className="search-movie" onChange={this.searchMovies} />
                 <div className="sortMovies" style={this.state.sortMoviesVisible ? { display: "block" } : { display: "none" }}>
                     <ul className="clearfix">
                         <li onClick={this.sortByAtoZAsc}><span>A - Z</span></li>
                         <li onClick={this.sortByAtoZADec}><span>Z - A</span></li>
-                        <li onClick={this.sortByYearFromNewest}><span>Newest</span></li>
-                        <li onClick={this.sortByYearFromOldest}><span>Oldest</span></li>
+                        <li onClick={this.sortByYearFromNewest}><span>Najnoviji</span></li>
+                        <li onClick={this.sortByYearFromOldest}><span>Najstariji</span></li>
                     </ul>
-                    <input type="text" placeholder="Search Movie" />
                 </div>
-                <input id="sortMoviesBtn" type="submit" onClick={this.toogleSortMovies} value={this.state.sortMoviesVisible ? "Hide" : "Sort Movie Menu"} />
-                <h1>Pretrazi filmove</h1>
+                <input id="sortMoviesBtn" type="submit" onClick={this.toogleSortMovies} value={this.state.sortMoviesVisible ? "Sakrij meni" : "Sortiraj filmove"} />
                 {
                     this.state.isLoaded ?
                         <div className="container-fluid moviesHolder">

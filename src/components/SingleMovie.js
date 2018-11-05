@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
 import {Link} from 'react-router-dom';
+import './SingleMovie.css';
 
 
 export default class SingleMovie extends Component {
@@ -20,27 +21,16 @@ export default class SingleMovie extends Component {
         // let {naziv, godina, slika, _id} = this.props.location.state
 
         return (
-            // <Grid>
-            //     <Row className="show-grid">
-            //         <div className='singleMovieHolder'></div>
-            //         <Col sm={12}>
-            //             <h1>{naziv}</h1>
-            //             <Image src={slika} thumbnail />
-            //             <h2>{godina}</h2>
-            //         </Col>
-            //     </Row>
-            // </Grid>
             <>
             <Link to="/">&lt; back</Link>
-            <h1>Single Movie</h1>
             <Movie podaci={this.props.location.state}/>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="single-movie-form">
             <label>Ime: </label><br/>
                 <input name="name"/><br/>
             <label>Komentar: </label><br/>
                 <textarea name="comment"></textarea>
-                <input type="submit" value="Posalji"/>
+                <input type="submit" value="Pošalji"/>
                 </form>
             </>
         )

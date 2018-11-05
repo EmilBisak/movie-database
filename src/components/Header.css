@@ -6,6 +6,7 @@ nav {
 nav a {
     border: 1px solid #434343;
     padding: 5px 10px;
+    font-size: 18px;
 }
 nav a:first-child {
     border-radius: 0 0 0 5px;

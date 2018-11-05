@@ -87,11 +87,11 @@ export default class Form extends Component {
                 <h1>Dodaj Film</h1>
                 <form method="post" onSubmit={this.addMovie}>
                     <label>Naziv Filma</label>
-                    <input type="text" name="movieName" onChange={this.handleInput} placeholder="Add title" required />
+                    <input type="text" name="movieName" onChange={this.handleInput} placeholder="Dodaj naslov" required />
                     <label>Godina</label>
-                    <input type="text" name="movieYear" onChange={this.handleInput} placeholder="Add year" required />
+                    <input type="text" name="movieYear" onChange={this.handleInput} placeholder="Dodaj godinu" required />
                     <label>Slika</label>
-                    <input type="text" name="movieImg" onChange={this.eventHandler} placeholder="Add img url" required />
+                    <input type="text" name="movieImg" onChange={this.eventHandler} placeholder="Dodaj url slike" required />
                     <div className="imagePlaceholder">
                         <img src={src} alt="movieImg"/>
                     </div>
