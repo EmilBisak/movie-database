@@ -16,9 +16,7 @@
 .moviesHolder h3{
     padding: 20px 0;
 }
-.moviesHolder .tooLong {
-    padding-bottom: 0;
-}
+
 .moviesHolder img{
     margin: 0 auto;
 }
@@ -114,3 +112,13 @@ main input[type="text"].search-movie {
     background-color: #f3f3f3;
   }
 
+  @media only screen and (max-width: 576px) {
+    .movieBox, .movieBox:hover {
+        border: none;
+    }
+
+    #sortMoviesBtn {
+        font-size: 14px;
+    }
+     
+}

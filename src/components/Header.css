@@ -1,12 +1,18 @@
 nav {
-    display: flex;
+   display: flex;
    flex-direction: row;
-   justify-content: flex-end;
+   justify-content: space-between;
 }
 nav a {
     border: 1px solid #434343;
     padding: 5px 10px;
     font-size: 18px;
+}
+nav input[type="text"] {
+    padding: 0 10px;
+    color: #000;
+    font-size: 18px;
+    height: fit-content;
 }
 nav a:first-child {
     border-radius: 0 0 0 5px;

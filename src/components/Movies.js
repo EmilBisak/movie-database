@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import filmovi from '../data/filmovi.json';
 import './Movies.css';
 import Movie from './Movie';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { getUrl } from '../config.api/api';
 
 
 class Movies extends Component {
@@ -15,7 +16,7 @@ class Movies extends Component {
     }
 
     componentDidMount() {
-        fetch('https://baza-podataka.herokuapp.com/filmovi/')
+        fetch(getUrl)
             .then(res => res.json())
             .then(json => this.setState({
                 filmovi: json,
@@ -76,7 +77,6 @@ class Movies extends Component {
 
     searchMovies = event => {
         let movieName = event.target.value;
-        console.log(movieName);
         let filtered = this.state.filmovi.filter(movie => {
             return movie.naziv.toLowerCase().indexOf(movieName.toLowerCase()) > -1
         })
@@ -87,17 +87,17 @@ class Movies extends Component {
 
     render() {
         const filmoviJSX = this.state.filtered.map(film => {
-            const { naziv, godina, slika, _id } = film
+            const { naziv, godina, slika, _id, comments } = film
             return (
                 <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={_id}>
                     <div className="movieBox">
                         <Link to={{
                             pathname: `singleMovie/${_id}`,
                             state: {
-                                naziv, godina, slika, _id,
+                                naziv, godina, slika, _id, comments
                             }
                         }}>
-                            <Movie podaci={{ naziv, godina, slika, _id }} />
+                            <Movie podaci={{ naziv, godina, slika, _id, comments }} />
                         </Link ></div></div>
             )
         })

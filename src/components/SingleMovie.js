@@ -1,38 +1,52 @@
-import React, { Component } from 'react';
-import Movie from './Movie';
-import {Link} from 'react-router-dom';
-import './SingleMovie.css';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Movie from "./Movie";
+import addMovie from "../shared/addMovie";
 
+class SingleMovie extends Component {
+    state = {};
 
-export default class SingleMovie extends Component {
+    handleSubmit = e => {
+        e.preventDefault();
+        const { naziv, godina, slika, comments } = this.props.location.state;
 
-    handleSubmit = event => {
-        event.preventDefault();
-        console.log(event.target);
-        console.log(event.target.name.value);
-        console.log(event.target.comment.value);
-        
-
-    }
+        const noviKomentar = {
+            user: e.target.name.value,
+            comment: e.target.comment.value
+        };
+        const komentari = comments ? [...comments, noviKomentar] : [noviKomentar];
+        addMovie(naziv, godina, slika, komentari);
+    };
 
     render() {
-        // let film = this.props.location.state;
-        // console.log(film);
-        // let {naziv, godina, slika, _id} = this.props.location.state
+        let komentariJsx;
+        try {
+            komentariJsx = this.props.location.state.comments.map((k, i) => (
+                <div key={i}>
+                    <small>{k.user}</small>
+                    <p>{k.comment}</p>
+                </div>
+            ));
+        } catch (error) {
+            komentariJsx = <p>Budite prvi koji će ostaviti komentar</p>;
+        }
 
         return (
             <>
-            <Link to="/">&lt; back</Link>
-            <Movie podaci={this.props.location.state}/>
-
-            <form onSubmit={this.handleSubmit} className="single-movie-form">
-            <label>Ime: </label><br/>
-                <input name="name"/><br/>
-            <label>Komentar: </label><br/>
-                <textarea name="comment"></textarea>
-                <input type="submit" value="Pošalji"/>
+                <Link to="/">&lt; Back</Link>
+                <Movie podaci={this.props.location.state} />
+                <p>{this.state.comm}</p>
+                {komentariJsx}
+                <form onSubmit={this.handleSubmit} className="single-movie-form">
+                    <label>Korisnik: </label><br />
+                    <input name="name" /><br />
+                    <label>Komentar: </label><br />
+                    <textarea name="comment"></textarea>
+                    <input type="submit" value="Pošalji" />
                 </form>
             </>
-        )
+        );
     }
 }
+
+export default SingleMovie;

@@ -10,12 +10,22 @@ const linkStyle = {
 }
 
 export default class Header extends Component {
+
+  state = {
+    password: ""
+  }
+
   render() {
     return (
       <header className="App-header">
         <nav>
-          <Link to="/" style={linkStyle}>Početna</Link>{"  "}
+
+          <input type='text' placeholder='Login' />
+
+          <span>
+          <Link to="/" style={linkStyle}>Početna</Link>
           <Link to="/addMovie" style={linkStyle}>Dodaj film</Link>
+          </span>
         </nav>
         <div><Link to="/"><img className="App-logo" src={logo} alt="logo" /> <h1>Baza filmova</h1></Link></div>
 

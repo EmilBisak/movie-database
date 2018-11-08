@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Form.css'
+import './Form.css';
+import addMovie from '../shared/addMovie';
 
 export default class Form extends Component {
 
@@ -27,26 +28,8 @@ export default class Form extends Component {
 
     addMovie = (e) => {
         e.preventDefault();
-        fetch('https://baza-podataka.herokuapp.com/dodaj-film/', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                naziv: this.state.movieName,
-                godina: this.state.movieYear,
-                slika: this.state.movieImg
-            })
-        })
-            .then(res => {
-                alert(`Movie " ${this.state.movieName.toUpperCase()}" has been updated to movie base.
-        Thank you for updating!`)
-                window.location.reload();
-            }
-            )
-            .catch(e => alert('Doslo je do greske'))
-
+        const {movieName, movieImg, movieYear} = this.state
+        addMovie(movieName, movieYear, movieImg)
     }
 
 
@@ -62,23 +45,6 @@ export default class Form extends Component {
         this.handleInput(event);
         this.imagePreview(event);
     }
-
-    //   render() {
-    //     let { visible } = this.state
-    //     return (
-    //       <div>
-    //         <button onClick={this.togle}>Add Movie</button>
-    //         <div style={visible ? { display: "block" } : { display: "none" }}>
-    //           <form onSubmit={this.addMovie}>
-    //             <input name="movieName" onBlur={this.handleInput} placeholder="Add title" required />
-    //             <input name="movieYear" onBlur={this.handleInput} placeholder="Add year" required />
-    //             <input name="movieImg" onBlur={this.handleInput} placeholder="Add img url" required />
-    //             <input className="inputSubmit" type="submit" value="Confirm" />
-    //           </form>
-    //         </div>
-    //       </div>
-    //     )
-    //   }
 
     render() {
         let src = this.state.movieImg ? this.state.movieImg : "http://icons-for-free.com/free-icons/png/512/283043.png";
