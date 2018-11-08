@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const basename = process.env.NODE_ENV === 'development' ? '/' : '/baza-filmova';
+// const basename = process.env.NODE_ENV === 'development' ? '/' : '/baza-filmova';
+// console.log(basename);
+
 
 ReactDOM.render(
-    <Router basename={basename}>
+    <HashRouter>
         <App />
-    </Router>
+    </HashRouter>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
