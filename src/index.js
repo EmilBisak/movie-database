@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import '../node_modules/react-bootstrap/dist/react-bootstrap';
+
+const basename = process.env.NODE_ENV === 'development' ? '/' : '/baza-filmova';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router basename={basename}>
         <App />
-    </BrowserRouter>
+    </Router>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
