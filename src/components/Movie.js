@@ -14,7 +14,7 @@ export default class Movie extends Component {
                 .then(res => res.text())
                 .then(res => {
                     alert(res);
-                    window.location.replace("http://localhost:3000")
+                    window.location.reload()
                 });
         }
     };

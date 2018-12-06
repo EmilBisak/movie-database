@@ -20,7 +20,7 @@ export default class Header extends Component {
       <header className="App-header">
         <nav>
 
-          <input type='text' placeholder='Login' />
+          {/* <input type='text' placeholder='Login' /> */}
 
           <span>
           <Link to="/" style={linkStyle}>Početna</Link>
