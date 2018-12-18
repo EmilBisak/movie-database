@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/movie-database/static/css/1.dd87713f.chunk.css"
   },
   {
-    "revision": "15a9f72a907f772d1b3d1a04aa0e1d7d",
+    "revision": "b9d5a1a2a275f01cd4ed9cfe6d23fcf5",
     "url": "/movie-database/index.html"
   }
 ];
