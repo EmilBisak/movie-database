@@ -1,21 +1,32 @@
 nav {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: flex-end;
 }
+
 nav a {
     border: 1px solid #434343;
     padding: 5px 10px;
     font-size: 18px;
 }
+
+nav a:hover {
+    background-color: #3d4450;
+}
+
+nav a:first-of-type {
+    border-radius: 25px 0 0 25px;
+}
+
+nav a:last-of-type {
+    border-radius: 0 25px 25px 0;
+}
+
 nav input[type="text"] {
     padding: 0 10px;
     color: #000;
     font-size: 18px;
     height: fit-content;
-}
-nav a:first-child {
-    border-radius: 0 0 0 5px;
 }
 
 header a, header a:visited, header a:hover, header a:active, header a:focus {

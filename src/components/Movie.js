@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { deleteUrl } from '../config.api/api'
 
-export default class Movie extends Component {
+class Movie extends Component {
     deleteMovie = e => {
         e.preventDefault();
         const { naziv, _id } = this.props.podaci;
@@ -14,7 +15,7 @@ export default class Movie extends Component {
                 .then(res => res.text())
                 .then(res => {
                     alert(res);
-                    window.location.reload()
+                    this.props.history.push("/");
                 });
         }
     };
@@ -23,9 +24,9 @@ export default class Movie extends Component {
         const { naziv, godina, slika } = this.props.podaci
         return (
             <div>
+                <span onClick={this.deleteMovie} className="delete-btn" title="Obrisi film">X</span>
                 <h3>{naziv}</h3>
                 <div className="image-holder">
-                    <span onClick={this.deleteMovie} className="delete-btn">X</span>
                     <img src={slika} alt={naziv} className="movieImg" />
                 </div>
                 <p>{godina}</p>
@@ -33,3 +34,5 @@ export default class Movie extends Component {
         )
     }
 }
+
+export default withRouter(Movie)

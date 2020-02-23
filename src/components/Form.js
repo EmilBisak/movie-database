@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import './Form.css';
 import addMovie from '../shared/addMovie';
+import { withAppContext } from '../store/AppContext';
 
-export default class Form extends Component {
+class Form extends Component {
 
     state = {
         movieName:"",
@@ -30,6 +32,8 @@ export default class Form extends Component {
         e.preventDefault();
         const {movieName, movieImg, movieYear} = this.state
         addMovie(movieName, movieYear, movieImg)
+        this.props.global.setIsLoaded(true);
+        this.props.history.push("/addMovie");
     }
 
 
@@ -47,7 +51,7 @@ export default class Form extends Component {
     }
 
     render() {
-        let src = this.state.movieImg ? this.state.movieImg : "http://icons-for-free.com/free-icons/png/512/283043.png";
+        let src = this.state.movieImg ? this.state.movieImg : "camera_movie.png";
         return (
             <div className="newMovie">
                 <h1>Dodaj Film</h1>
@@ -69,3 +73,5 @@ export default class Form extends Component {
 
     }
 }
+
+export default withRouter(withAppContext(Form))

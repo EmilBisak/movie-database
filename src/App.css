@@ -60,6 +60,12 @@ footer {
   margin-top: 20px;
 }
 
+footer.absolute-positioned-footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
 footer small {
   color: #fff;
 }

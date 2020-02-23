@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import filmovi from '../data/filmovi.json';
 import './Movies.css';
 import Movie from './Movie';
-import { Link } from 'react-router-dom';
+import { withAppContext } from '../store/AppContext';
 import { getUrl } from '../config.api/api';
 
 
@@ -11,18 +12,22 @@ class Movies extends Component {
     state = {
         filmovi: [],
         filtered: [],
+        sortMoviesVisible: false,
         isLoaded: false,
-        sortMoviesVisible: false
     }
 
     componentDidMount() {
+        this.props.global.setFooterToBottom(true);
         fetch(getUrl)
             .then(res => res.json())
-            .then(json => this.setState({
-                filmovi: json,
-                filtered: json,
-                isLoaded: true
-            }));
+            .then(json => {
+                this.setState({
+                    filmovi: json,
+                    filtered: json,
+                    isLoaded: true,
+                })
+                this.props.global.setFooterToBottom(false);
+            })
     }
 
     toogleSortMovies = () => {
@@ -82,6 +87,12 @@ class Movies extends Component {
         })
 
         this.setState({ filtered })
+        
+        if (!!!filtered.length) {
+            this.props.global.setFooterToBottom(true);
+        } else {
+            this.props.global.setFooterToBottom(false);
+        }
 
     }
 
@@ -128,4 +139,4 @@ class Movies extends Component {
     }
 }
 
-export default Movies;
+export default withAppContext(Movies);

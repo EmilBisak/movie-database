@@ -8,15 +8,38 @@ form label {
 form input {
     padding: 5px;
 }
-form input[type="text"] {
+/* form input[type="text"] {
     margin-bottom: 10px;
     width: 50%;
     border-radius: 5px;
     border: 1px solid gray
-}
+} */
 
 form input[type="text"]:last-child {
     margin-bottom: 20px;
+}
+
+form input[type="text"] {
+    font-size: 14px;
+    transition: box-shadow .1s;
+    width: 50%;
+    padding: 8px 5px 8px 16px;
+    border-radius: 18px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    outline: none;
+    position: relative;
+    z-index: 3;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+form input[type="text"]:focus,
+form input[type="text"]:hover,
+form input[type="text"]:active {
+    transition: box-shadow .1s;
+    box-shadow: 0 0 8px #ccc;
+    outline: none;
 }
 
 input[type="submit"] {
@@ -40,9 +63,12 @@ form input[type="submit"]:hover {
     max-width: 300px;
     margin: 0 auto;
     border-radius: 8px;
-    border: 2px solid gray;
+    border: 1px solid #ccc;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .imagePlaceholder img {
-    max-height: 300px;
+    max-height: 250px;
 }
