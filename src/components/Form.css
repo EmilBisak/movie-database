@@ -19,7 +19,7 @@ form input[type="text"]:last-child {
     margin-bottom: 20px;
 }
 
-form input[type="text"] {
+form input[type="text"], form input[name="name"] {
     font-size: 14px;
     transition: box-shadow .1s;
     width: 50%;
@@ -36,7 +36,10 @@ form input[type="text"] {
 
 form input[type="text"]:focus,
 form input[type="text"]:hover,
-form input[type="text"]:active {
+form input[type="text"]:active,
+form input[name="name"]:focus,
+form input[name="name"]:hover,
+form input[name="name"]:active {
     transition: box-shadow .1s;
     box-shadow: 0 0 8px #ccc;
     outline: none;
@@ -58,6 +61,34 @@ form input[type="submit"]:hover {
     background-color: #71ff9d;
 }
 
+form textarea {
+    font-size: 14px;
+    transition: box-shadow .1s;
+    padding: 8px 5px 8px 16px;
+    border-radius: 18px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    width: 30%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+form input[name="name"] {
+    width: 30%;
+}
+
+form textarea:focus,
+form textarea:hover,
+form textarea:active {
+    transition: box-shadow .1s;
+    box-shadow: 0 0 8px #ccc;
+    outline: none;
+}
+
 .imagePlaceholder {
     height: 300px;
     max-width: 300px;
@@ -71,4 +102,13 @@ form input[type="submit"]:hover {
 }
 .imagePlaceholder img {
     max-height: 250px;
+}
+
+@media only screen and (max-width: 576px) {
+    form input[name="name"], 
+    form input[type="text"], 
+    form textarea {
+        width: 90%;
+    }
+
 }

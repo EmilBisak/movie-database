@@ -21,17 +21,30 @@ class Movie extends Component {
     };
 
     render() {
-        const { naziv, godina, slika } = this.props.podaci
-        return (
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        return !!this.props.podaci ? (
             <div>
-                <span onClick={this.deleteMovie} className="delete-btn" title="Obrisi film">X</span>
-                <h3>{naziv}</h3>
+                {isLoggedIn && <span onClick={this.deleteMovie} className="delete-btn" title="Obrisi film">X</span>}
+                <h3 className={isLoggedIn ? "logged-in" : ""}>{this.props.podaci.naziv}</h3>
                 <div className="image-holder">
-                    <img src={slika} alt={naziv} className="movieImg" />
+                    <img src={this.props.podaci.slika} alt={this.props.podaci.naziv} className="movieImg" />
                 </div>
-                <p>{godina}</p>
+                <p>{this.props.podaci.godina}</p>
             </div>
         )
+            : !!this.props.movie ? (
+                <div>
+                    {isLoggedIn && <span onClick={this.deleteMovie} className="delete-btn" title="Obrisi film">X</span>}
+                    <h3 className={isLoggedIn ? "logged-in" : ""}>{this.props.movie.naziv}</h3>
+                    <div className="image-holder">
+                        <img src={this.props.movie.slika} alt={this.props.movie.naziv} className="movieImg" />
+                    </div>
+                    <p>{this.props.movie.godina}</p>
+                </div>
+            )
+                : (
+                    <img className="loading" src="loading.gif" alt="Loading" />
+                )
     }
 }
 

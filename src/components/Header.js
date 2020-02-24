@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { withRouter } from "react-router-dom"
 import logo from '../assets/cinema.png';
 import { Link } from 'react-router-dom';
+import { withAppContext } from '../store/AppContext';
 
 import './Header.css';
 
@@ -9,22 +11,41 @@ const linkStyle = {
   textDecoration: "none",
 }
 
-export default class Header extends Component {
+class Header extends Component {
 
   state = {
-    password: ""
+    password: "",
+    isLoggedIn: false
+  }
+
+  loginInputRef;
+
+  handleLoginInput = event => {
+    this.setState({ password: event.target.value })
+  }
+
+  handleLoginAndLogout = () => {
+    if (!!window.localStorage.getItem("isLoggedIn")) {
+      this.props.global.logout();
+    } else {
+      this.props.global.login(this.state.password.toLowerCase());
+    }
   }
 
   render() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     return (
       <header className="App-header">
         <nav>
-
-          {/* <input type='text' placeholder='Login' /> */}
-
+          <div className="login-holder">
+            <input type="text" placeholder={isLoggedIn ? "Ulogovani ste" : "Ulogujte se"} onChange={this.handleLoginInput} disabled={isLoggedIn} value={isLoggedIn ? "Ulogovani ste" : this.state.password} />
+            <span className="login-button" onClick={() => this.handleLoginAndLogout(this.state.password)}>
+              <img src={isLoggedIn ? "logout.png" : "key.png"} alt="key" />
+            </span>
+          </div>
           <span>
-          <Link to="/" style={linkStyle}>Početna</Link>
-          <Link to="/addMovie" style={linkStyle}>Dodaj film</Link>
+            <Link to="/" style={linkStyle}>Početna</Link>
+            <Link to="/addMovie" style={linkStyle}>Dodaj film</Link>
           </span>
         </nav>
         <div><Link to="/"><img className="App-logo" src={logo} alt="logo" /> <h1>Baza filmova</h1></Link></div>
@@ -33,3 +54,5 @@ export default class Header extends Component {
     )
   }
 }
+
+export default withRouter(withAppContext(Header));

@@ -2,7 +2,10 @@ import React from 'react';
 
 const AppContext = React.createContext({
     shouldFooterBePositionedAbsolute: false,
-    setFooterToBottom: (boolean) => {}
+    setFooterToBottom: (boolean) => {},
+    isLoggedIn: false,
+    login: (password) => {},
+    logout: () => {},
 })
 
 //create the consumer as higher order component

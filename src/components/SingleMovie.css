@@ -1,3 +1,55 @@
-.single-movie-form input[name="name"] {
+.back-button {
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #282c34;
+    color: #fff;
+}
+
+.back-button:hover {
+    background: #3d4450;
+    color: #fff;
+}
+
+.single-movie h3 {
+    font-size: 2.5em;
+    padding: 20px 0;
+}
+
+.single-movie .movieBox,
+.single-movie .movieBox:hover,
+.single-movie .movieBox:active,
+.single-movie .movieBox:visited {
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.single-movie .delete-btn {
+    padding: 8px 18px;
+}
+
+.single-movie .delete-btn:hover {
+    padding: 13px 25px;
+}
+
+.single-movie .comment-holder {
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    display: inline-block;
     width: 50%;
+    border-radius: 25px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 576px) {
+    .single-movie .comment-holder {
+        width: 70%;
+    }
+
 }

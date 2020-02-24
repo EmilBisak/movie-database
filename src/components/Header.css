@@ -1,13 +1,32 @@
+.App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-header h1 {
+    display: inline-block;
+    padding: 0;
+}
+
 nav {
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 nav a {
     border: 1px solid #434343;
-    padding: 5px 10px;
+    padding: 0 10px;
     font-size: 18px;
+    border-top: none;
+    border-right: none;
+    height: 34px;
+    line-height: 34px;
+    display: inline-block;
 }
 
 nav a:hover {
@@ -15,21 +34,120 @@ nav a:hover {
 }
 
 nav a:first-of-type {
-    border-radius: 25px 0 0 25px;
+    border-radius: 0 0 0 20px;
 }
 
 nav a:last-of-type {
-    border-radius: 0 25px 25px 0;
+    border-radius: 0;
 }
 
-nav input[type="text"] {
-    padding: 0 10px;
-    color: #000;
-    font-size: 18px;
-    height: fit-content;
-}
-
-header a, header a:visited, header a:hover, header a:active, header a:focus {
+header a,
+header a:visited,
+header a:hover,
+header a:active,
+header a:focus {
     text-decoration: none;
     color: #fff;
+}
+
+.login-holder {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.login-holder input {
+    padding: 4px 10px;
+    font-size: 14px;
+    transition: box-shadow .1s;
+    width: 300px;
+    border-radius: 0 0 20px 0;
+    box-shadow: none;
+    border: 1px solid #434343;
+    border-top: none;
+    border-right: none;
+    outline: none;
+    color: #1c1c1c;
+    height: 34px;
+}
+
+.login-holder input:focus,
+.login-holder input:hover,
+.login-holder input:active {
+    transition: box-shadow .1s;
+    box-shadow: 0 6px 8px #1c1c1c;
+    outline: none;
+}
+
+.login-holder .login-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 0 20px 0;
+    background: #17ab93;
+    height: 34px;
+    width: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-holder .login-button:hover,
+.login-holder .login-button:active {
+    background: #1bc7aa;
+}
+
+.login-holder .login-button img {
+    height: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .App-header h1 {
+        padding: 5px 0;
+        font-size: 28px;
+    }
+
+    .login-holder input {
+        width: 188px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    nav a {
+        width: 50%;
+    }
+    
+    nav a:hover {
+        background-color: #3d4450;
+    }
+    
+    nav a:first-of-type {
+        border-radius: 0;
+    }
+    
+    .login-holder {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+    }
+    
+    .login-holder input {
+        border-radius: 0;
+        width: 100%;
+    }
+    
+    .login-holder .login-button {
+        border-radius: 0;
+    }
+
 }

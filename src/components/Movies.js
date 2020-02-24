@@ -17,7 +17,7 @@ class Movies extends Component {
     }
 
     componentDidMount() {
-        this.props.global.setFooterToBottom(true);
+        this.props.global.handleFooterPositioning(true);
         fetch(getUrl)
             .then(res => res.json())
             .then(json => {
@@ -26,7 +26,10 @@ class Movies extends Component {
                     filtered: json,
                     isLoaded: true,
                 })
-                this.props.global.setFooterToBottom(false);
+                this.props.global.handleFooterPositioning(false);
+            })
+            .catch(error => {
+                console.log(error)
             })
     }
 
@@ -89,9 +92,9 @@ class Movies extends Component {
         this.setState({ filtered })
         
         if (!!!filtered.length) {
-            this.props.global.setFooterToBottom(true);
+            this.props.global.handleFooterPositioning(true);
         } else {
-            this.props.global.setFooterToBottom(false);
+            this.props.global.handleFooterPositioning(false);
         }
 
     }
@@ -132,7 +135,7 @@ class Movies extends Component {
                                 {filmoviJSX}
                             </div>
                         </div> :
-                        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading" />
+                        <img className="loading" src="loading.gif" alt="Loading" />
                 }
             </div >
         )
