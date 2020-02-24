@@ -14,9 +14,14 @@ class Movies extends Component {
         filtered: [],
         sortMoviesVisible: false,
         isLoaded: false,
+        selectedFilter: "",
     }
 
     componentDidMount() {
+        this.getAllMovies();
+    }
+
+    getAllMovies = () => {
         this.props.global.handleFooterPositioning(true);
         fetch(getUrl)
             .then(res => res.json())
@@ -50,7 +55,10 @@ class Movies extends Component {
             }
             return 0;
         })
-        this.setState({ filtered: arr })
+        this.setState({
+            filtered: arr,
+            selectedFilter: "A-Z"
+        })
     }
 
     sortByAtoZADec = () => {
@@ -66,21 +74,30 @@ class Movies extends Component {
             }
             return 0;
         })
-        this.setState({ filtered: arr })
+        this.setState({
+            filtered: arr,
+            selectedFilter: "Z-A"
+        })
     }
 
     sortByYearFromNewest = () => {
         let arr = this.state.filmovi.sort((a, b) => {
             return b.godina - a.godina
         })
-        this.setState({ filtered: arr })
+        this.setState({
+            filtered: arr,
+            selectedFilter: "newest"
+        })
     }
 
     sortByYearFromOldest = () => {
         let arr = this.state.filmovi.sort((a, b) => {
             return a.godina - b.godina
         })
-        this.setState({ filtered: arr })
+        this.setState({
+            filtered: arr,
+            selectedFilter: "oldest"
+        })
     }
 
     searchMovies = event => {
@@ -90,7 +107,7 @@ class Movies extends Component {
         })
 
         this.setState({ filtered })
-        
+
         if (!!!filtered.length) {
             this.props.global.handleFooterPositioning(true);
         } else {
@@ -100,6 +117,7 @@ class Movies extends Component {
     }
 
     render() {
+        const { selectedFilter } = this.state
         const filmoviJSX = this.state.filtered.map(film => {
             const { naziv, godina, slika, _id, comments } = film
             return (
@@ -111,23 +129,47 @@ class Movies extends Component {
                                 naziv, godina, slika, _id, comments
                             }
                         }}>
-                            <Movie podaci={{ naziv, godina, slika, _id, comments }} />
+                            <Movie podaci={{ naziv, godina, slika, _id, comments }} getAllMovies={this.getAllMovies} />
                         </Link ></div></div>
             )
         })
+
+        let selectedFilterTitle;
+
+        switch (selectedFilter) {
+            case "A-Z":
+                selectedFilterTitle = selectedFilter
+                break;
+            case "Z-A":
+                selectedFilterTitle = selectedFilter
+                break;
+            case "newest":
+                selectedFilterTitle = "Najnoviji"
+                break;
+            case "oldest":
+                selectedFilterTitle = "Najstariji"
+                break;
+
+            default:
+                selectedFilterTitle = ""
+                break;
+        }
 
         return (
             <div>
                 <input type="text" placeholder="Pretraži filmove" className="search-movie" onChange={this.searchMovies} />
                 <div className="sortMovies" style={this.state.sortMoviesVisible ? { display: "block" } : { display: "none" }}>
-                    <ul className="clearfix">
-                        <li onClick={this.sortByAtoZAsc}><span>A - Z</span></li>
-                        <li onClick={this.sortByAtoZADec}><span>Z - A</span></li>
-                        <li onClick={this.sortByYearFromNewest}><span>Najnoviji</span></li>
-                        <li onClick={this.sortByYearFromOldest}><span>Najstariji</span></li>
+                    <ul>
+                        <li className={selectedFilter === "A-Z" ? "selected-filter" : ""} onClick={this.sortByAtoZAsc}><span>A - Z</span></li>
+                        <li className={selectedFilter === "Z-A" ? "selected-filter" : ""} onClick={this.sortByAtoZADec}><span>Z - A</span></li>
+                        <li className={selectedFilter === "newest" ? "selected-filter" : ""} onClick={this.sortByYearFromNewest}><span>Najnoviji</span></li>
+                        <li className={selectedFilter === "oldest" ? "selected-filter" : ""} onClick={this.sortByYearFromOldest}><span>Najstariji</span></li>
                     </ul>
                 </div>
-                <input id="sortMoviesBtn" type="submit" onClick={this.toogleSortMovies} value={this.state.sortMoviesVisible ? "Sakrij meni" : "Sortiraj filmove"} />
+                <p id="sortMoviesBtn" onClick={this.toogleSortMovies} >
+                    {this.state.sortMoviesVisible ? "Sakrij filtere" : "Sortiraj filmove"}
+                    {this.state.sortMoviesVisible ? "" : <span className="selected-filter-title"><small>{selectedFilterTitle}</small></span>}
+                </p>
                 {
                     this.state.isLoaded ?
                         <div className="container-fluid moviesHolder">

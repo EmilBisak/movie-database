@@ -15,7 +15,11 @@ class Movie extends Component {
                 .then(res => res.text())
                 .then(res => {
                     alert(res);
-                    this.props.history.push("/");
+                    if (this.props.history.location.pathname === "/") {
+                        this.props.getAllMovies();
+                    } else {
+                        this.props.history.push("/");
+                    }
                 });
         }
     };

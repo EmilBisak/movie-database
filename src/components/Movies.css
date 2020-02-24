@@ -1,5 +1,10 @@
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .movieImg {
-    max-height: 260px;
+    height: 260px;
 }
 
 .movieBox {
@@ -61,6 +66,9 @@
     padding: 3px 15px;
     cursor: pointer;
     user-select: none;
+    width: 340px;
+    margin: 0 auto 20px;
+    position: relative;
 }
 
 #sortMoviesBtn:hover {
@@ -72,6 +80,13 @@
     outline: none;
 }
 
+#sortMoviesBtn .selected-filter-title {
+    color: #17ab93;
+    font-weight: bold;
+    position: absolute;
+    right: 43px;
+}
+
 .sortMovies {
     margin-top: 10px;
 }
@@ -80,11 +95,13 @@
     display: table;
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .sortMovies ul li {
     list-style: none;
-    float: left;
+    /* float: left; */
     margin-right: 15px;
     border: 1px solid #ccc;
     border-radius: 25px;
@@ -104,6 +121,10 @@
     margin-right: 0;
 }
 
+.sortMovies ul li.selected-filter {
+    background-color: #17ab93;
+}
+
 .sortMovies ul li span {
     font-size: 16px;
 }
@@ -120,11 +141,12 @@
 
 .image-holder {
     margin: 0 auto;
-    display: table;
-}
-
-.image-holder img {
-    float: right;
+    display: flex;
+    width: 177px;
+    height: 260px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .delete-btn {
@@ -141,7 +163,7 @@
     top: 0;
     user-select: none;
     cursor: pointer;
-    border-radius: 0 0 0 15px;
+    border-radius: 0 5px 0 15px;
     border-top: 0px solid #fff;
     border-right: 0px solid #fff;
     transition: all .3s;
@@ -155,16 +177,41 @@
     transition: all .3s;
 }
 
+.single-movie .delete-btn:hover {
+    border-radius: 0 0 0 15px;
+}
+
 @media only screen and (max-width: 576px) {
 
     .movieBox,
     .movieBox:hover {
         border: none;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .single-movie .movieBox,
+    .single-movie .movieBox:hover {
+        border: none;
+        max-width: unset;
     }
 
     .search-movie,
     #sortMoviesBtn {
         width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    .sortMovies ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 14px;
+    }
+
+    #sortMoviesBtn .selected-filter-title {
+        right: 10px;
     }
 
 }

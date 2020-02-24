@@ -99,7 +99,9 @@ form textarea:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
+
 .imagePlaceholder img {
     max-height: 250px;
 }
